@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
 
 const Modal = ({ id }) => {
 
@@ -46,6 +47,10 @@ const Modal = ({ id }) => {
             </div>
         </div>
     )
+}
+
+Modal.propTypes = {
+    id: PropTypes.string,
 }
 
 export default Modal;

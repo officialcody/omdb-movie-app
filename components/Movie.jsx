@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Modal from './Modal';
 
 const Movie = ({ movie }) => {
@@ -12,6 +13,10 @@ const Movie = ({ movie }) => {
         </div>
     </div>
   )
+}
+
+Movie.propTypes = {
+  movie: PropTypes.object,
 }
 
 export default Movie

@@ -1,27 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Movie from './Movie';
 
-const AllMovies = () => {
-    const [movies, setMovies] = useState([]);
-
-    const getMovies = async () => {
-        const url = `https://omdbapi.com/?s=avengers&apikey=${process.env.API_KEY}`;
-        const response = await fetch(url);
-        const jsonResponse = await response.json();
-        setMovies(jsonResponse.Search);
-    }
-
-    useEffect(() => {
-      getMovies();
-    }, [])
-    
+const AllMovies = ({ movies }) => {
     return (
         <div className="container bg-secondary">
             <div className="row row-cols-1 row-cols-md-3 g-2">
-                { movies.map((movie, index)=>(<div key={index} className="col"><Movie  movie={movie} /></div>))}
+            { movies &&
+                movies.map((movie, index)=>(
+                    <div key={index} className="col">
+                        <Movie  movie={movie} />
+                    </div>
+                    )
+                )
+            }
             </div>
         </div>
     )
+}
+
+AllMovies.propTypes = {
+    movies: PropTypes.array,
 }
 
 export default AllMovies

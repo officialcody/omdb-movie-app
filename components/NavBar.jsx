@@ -21,6 +21,7 @@ const NavBar = () => {
             <li className="nav-item">
                 <Link href={"/"}><a className="nav-link active" >OMDB MOVIE APPLICATION</a></Link>
                 {user ? <>
+                
                 <button className='btn btn-primary' onClick={() => {
                     cookie.remove('token');
                     router.push('/');
