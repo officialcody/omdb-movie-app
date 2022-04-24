@@ -14,3 +14,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.nav {
+  background-color: darkslategrey !important;
+}
+
+.nav-link {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: large !important;
+  font-weight: bold !important;
+}
