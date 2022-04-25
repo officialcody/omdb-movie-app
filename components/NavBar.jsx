@@ -4,8 +4,9 @@ import cookie from 'js-cookie';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import SearchBar from './SearchBar';
 
-const NavBar = () => {
+const NavBar = ({ setMovies }) => {
     const router = useRouter();
     const { token } = parseCookies();
     let user = false;
@@ -21,7 +22,7 @@ const NavBar = () => {
             <li className="nav-item">
                 <Link href={"/"}><a className="nav-link active" >OMDB MOVIE APPLICATION</a></Link>
                 {user ? <>
-                
+                <SearchBar setMovies={setMovies} />
                 <button className='btn btn-primary' onClick={() => {
                     cookie.remove('token');
                     router.push('/');
