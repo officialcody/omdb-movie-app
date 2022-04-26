@@ -18,10 +18,12 @@ const SearchBar = ({ setMovies }) => {
     }
 
     return (
-        <form onSubmit={searchMovieByTerm}>
-            <input type="text" name="searchTerm" value={searchTerm} onChange={handleSearchInput} required />
-            <button type='submit'>Search</button>
-        </form>
+        <>
+            <form onSubmit={searchMovieByTerm}>
+                <input type="text" name="searchTerm" value={searchTerm} onChange={handleSearchInput} required />
+                <button type='submit'>Search</button>
+            </form>
+        </>
     )
 }
 

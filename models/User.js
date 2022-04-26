@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
     name: {
@@ -15,11 +15,14 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please enter your password"],
         maxlength: [255, "Password is too long"],
+    },
+    playlist: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Playlist", 
+        required: true 
     }
 });
 
-// module.exports = mongoose.models.User || mongoose.model("User", UserSchema);
-
-const User = mongoose.models.User || mongoose.model('User', UserSchema);
+const User = mongoose.models.User || mongoose.model("User", UserSchema);
 
 export default User;
